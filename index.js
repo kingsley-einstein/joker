@@ -3,7 +3,7 @@ const app = express();
 const config = require('./config/config');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/jokertestdb', (err) => {
+mongoose.connect(process.env.DATABASE_MONGO, (err) => {
     if (err) throw err;
 
     console.log('Mongoose connected');
